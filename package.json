@@ -1,0 +1,14 @@
+{
+  "name": "simple_virtual_dom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tsaiDavid/simple_virtual_dom.git",
+  "author": "David Tsai <david@whataniceguy.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel watch src/index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.9.2"
+  }
+}

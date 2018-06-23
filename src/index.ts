@@ -1,12 +1,7 @@
-import v from './vnode'
+import { v, r } from "./vnode";
 
-document.addEventListener("DOMContentLoaded", function(event) { 
-  window.alert("suh")
-  console.log("hi")
-  console.log(v(
-    'div',
-    { id: "foo" },
-    "Hello!"
-  ))
-
+document.addEventListener("DOMContentLoaded", function(event) {
+  const node1 = v("div", { id: "foo" }, "Hello!");
+  
+  document.getElementById("app").appendChild(r(node1))
 });

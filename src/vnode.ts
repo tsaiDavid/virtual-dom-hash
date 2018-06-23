@@ -9,7 +9,9 @@ export interface VNode {
   nodeName: string,
   attributes: object | null,
   children: Array<VNode | string>,
-  hash?: string
+  hash?: string,
+  // a mapping of the children, making the hash the key
+  childMap?: any
 }
 
 export const v = function(
@@ -22,6 +24,14 @@ export const v = function(
     nodeName: tag,
     attributes: attr,
     children: children
+  }
+
+  if (children && children.length) {
+    node["childMap"] = children.reduce((obj, child, idx) => {
+      child["index"] = idx
+      obj[child["hash"]] = child
+      return obj
+    }, {})
   }
 
   // Hash the node object using SHA1 string

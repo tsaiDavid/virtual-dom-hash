@@ -1,3 +1,4 @@
+import hash from 'object-hash'
 // v('div', { id: 'foo' }, 'Hello!')
 
 /**
@@ -7,7 +8,8 @@
 export interface VNode {
   nodeName: string,
   attributes: object | null,
-  children: Array<VNode | string>
+  children: Array<VNode | string>,
+  hash?: string
 }
 
 export const v = function(
@@ -15,12 +17,16 @@ export const v = function(
   attr: object | null,
   children: Array<VNode | string>
 ): VNode {
-  
-  return {
+
+  const node = {
     nodeName: tag,
     attributes: attr,
-    children: children 
+    children: children
   }
+
+  // Hash the node object using SHA1 string
+  node["hash"] = hash(node)
+  return node
 }
 
 export const r = (vnode) => {

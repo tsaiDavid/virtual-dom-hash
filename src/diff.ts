@@ -17,7 +17,7 @@ const diff = (v1: any, v2: any, location?: string[]) => {
       return {
         location: location,
         type: 'write',
-        data: c1
+        data: v1 
       }
     }
 

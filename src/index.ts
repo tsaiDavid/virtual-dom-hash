@@ -23,5 +23,6 @@ window.tree2 = tree2
 
 // Calling diff on these trees results in a patch object
 const getPatch = diff(tree1, tree2)
+console.log(getPatch)
 
 document.addEventListener("DOMContentLoaded", function(event) {});

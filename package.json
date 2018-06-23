@@ -6,9 +6,12 @@
   "author": "David Tsai <david@whataniceguy.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel watch src/index.html"
+    "dev": "parcel src/index.html"
   },
   "dependencies": {
     "parcel-bundler": "^1.9.2"
+  },
+  "devDependencies": {
+    "typescript": "^2.9.2"
   }
 }

@@ -4,11 +4,22 @@
  * <div id="foo">Hello!</div>
  */
 
-export const v = function(tag: string, attr: object, children?: string) {
+interface VNode {
+  nodeName: string,
+  attributes: object | null,
+  children: Array<VNode | string>
+}
+
+export const v = function(
+  tag: string,
+  attr: object | null,
+  children: Array<VNode | string>
+): VNode {
+  
   return {
     nodeName: tag,
     attributes: attr,
-    children: [children]
+    children: children 
   }
 }
 

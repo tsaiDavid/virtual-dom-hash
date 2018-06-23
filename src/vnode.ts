@@ -4,7 +4,7 @@
  * <div id="foo">Hello!</div>
  */
 
-interface VNode {
+export interface VNode {
   nodeName: string,
   attributes: object | null,
   children: Array<VNode | string>
